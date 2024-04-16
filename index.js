@@ -1,17 +1,12 @@
 const express = require('express');
+const catsRouter = require('./routes/cat.routes');
 const app = express();
-const port = 3000;
 
-// // Import catRoutes module
-// const catRoutes = require('./routes/cat_router');
+app.use(express.json());
+app.use('/cats', catsRouter);
 
-// Route middleware
-app.use('/api', catRoutes);
-
-app.get('/', (req, res) => {
-  res.send('Hello Aicha Zindamoyen!');
-});
-
-app.listen(port, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log(`Example app listening on port ${port}`);
+  
 });
