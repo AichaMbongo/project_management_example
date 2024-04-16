@@ -26,7 +26,23 @@ function updateCat(req, res) {
   }
 
   
-
+// Delete a cat by ID
+function deleteCat(req, res) {
+    const { id } = req.params;
+    const catIndex = cats.findIndex(cat => cat.id === parseInt(id));
+    if (catIndex === -1) {
+      return res.status(404).json({ message: "Cat not found" });
+    }
+    cats.splice(catIndex, 1);
+    res.sendStatus(204);
+  }
+  
+  module.exports = {
+    createCat,
+    readCats,
+    updateCat,
+    deleteCat
+  };
 
 
 
