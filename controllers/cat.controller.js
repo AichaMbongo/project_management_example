@@ -7,3 +7,9 @@ function createCat(req, res) {
   cats.push(newCat);
   res.status(201).json(newCat);
 }
+
+// Read all cats
+function readCats(req, res) {
+    res.json(cats);
+  }
+
