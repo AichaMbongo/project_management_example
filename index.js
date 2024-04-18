@@ -9,7 +9,7 @@ const port = 3000;
 app.use('/api', catRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Hello Aicha Zindamoyen!');
+  res.send('Hello Aicha Zindamoyen!.');
 });
 
 app.listen(port, () => {
